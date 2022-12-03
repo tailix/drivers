@@ -1,0 +1,59 @@
+##########################
+# Common generated files #
+##########################
+
+*.a
+*.c.d
+*.la
+*.lo
+*.o
+
+.deps/
+.dirstamp
+.libs/
+
+############################
+# Always generated in root #
+############################
+
+/INSTALL
+/aclocal.m4
+/ar-lib
+/autom4te.cache/
+/autoscan.log
+/compile
+/config.guess
+/config.h.in
+/config.h.in~
+/config.sub
+/configure
+/configure.ac~
+/configure~
+/depcomp
+/install-sh
+/ltmain.sh
+/missing
+/test-driver
+
+/m4/*
+!/m4/.keep
+
+# Custom
+
+/Makefile.in
+/include/Makefile.in
+
+###########################################
+# Only generated when configuring in root #
+###########################################
+
+/config.h
+/config.log
+/config.status
+/libtool
+/stamp-h1
+
+# Custom
+
+/Makefile
+/include/Makefile
