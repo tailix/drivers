@@ -32,6 +32,37 @@ AM_INIT_AUTOMAKE([1.16 subdir-objects])
 
 
 
+#########################
+# Automake conditionals #
+#########################
+
+dnl Architecture
+AM_CONDITIONAL([ASM_I386],    [test "$host_cpu" = i386])
+AM_CONDITIONAL([ASM_RISCV64], [test "$host_cpu" = riscv64])
+AM_CONDITIONAL([ASM_X86_64],  [test "$host_cpu" = x86_64])
+
+dnl Architecture (additional)
+AM_CONDITIONAL([ASM_RISCV],   [test "$host_cpu" = riscv64])
+AM_CONDITIONAL([ASM_X86],     [test "$host_cpu" = i386 -o "$host_cpu" = x86_64])
+
+
+
+####################
+# Autoconf defines #
+####################
+
+dnl Architecture
+AS_IF([test "$host_cpu" = i386],    [AC_DEFINE([ASM_I386],    [1], [architecture is i386])])
+AS_IF([test "$host_cpu" = riscv64], [AC_DEFINE([ASM_RISCV64], [1], [architecture is RISC-V 64-bit])])
+AS_IF([test "$host_cpu" = x86_64],  [AC_DEFINE([ASM_X86_64],  [1], [architecture is x86_64])])
+
+dnl Architecture (additional)
+AS_IF([test "$host_cpu" = riscv64], [AC_DEFINE([ASM_RISCV],   [1], [architecture is RISC-V])])
+AS_IF([test "$host_cpu" = i386],    [AC_DEFINE([ASM_X86],     [1], [architecture is x86])])
+AS_IF([test "$host_cpu" = x86_64],  [AC_DEFINE([ASM_X86],     [1], [architecture is x86])])
+
+
+
 ##############
 # Run checks #
 ##############
