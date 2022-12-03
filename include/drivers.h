@@ -5,8 +5,6 @@
 extern "C" {
 #endif
 
-int drivers_foobar(int a, int b);
-
 #ifdef __cplusplus
 }
 #endif

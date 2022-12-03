@@ -8,7 +8,6 @@ SUBDIRS = include
 lib_LTLIBRARIES = libdrivers.la
 
 libdrivers_la_SOURCES = \
-	src/foobar.c \
 	src/console.c \
 	src/shutdown.c
 
