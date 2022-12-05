@@ -2,7 +2,7 @@
 # Specify program versions #
 ############################
 
-AC_PREREQ([2.68])
+AC_PREREQ([2.70])
 LT_PREREQ([2.4.6])
 
 
@@ -72,7 +72,6 @@ AC_LANG([C])
 AM_PROG_AR
 AM_PROG_AS
 AC_PROG_CC
-AC_PROG_CC_C99
 AC_C_INLINE
 AC_CHECK_HEADER_STDBOOL
 AC_CHECK_HEADERS([stdarg.h stddef.h stdint.h])
