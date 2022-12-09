@@ -32,12 +32,17 @@ void drivers_console_print(const char *const s)
     }
 }
 
-void drivers_console_printf(const char *format, ...)
+void drivers_console_printf(const char *const format, ...)
 {
     va_list va;
     va_start(va, format);
     kernaux_vfprintf(file_putc, NULL, format, va);
     va_end(va);
+}
+
+void drivers_console_vprintf(const char *const format, va_list va)
+{
+    kernaux_vfprintf(file_putc, NULL, format, va);
 }
 
 void drivers_console_puts(const char *const s)
